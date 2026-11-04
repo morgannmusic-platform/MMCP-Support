@@ -1,0 +1,345 @@
+.accueil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 150px 0 0 0;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.titre h1 {
+    margin: 20px 0 0 0;
+    font-size: 70px;
+}
+
+.titre p {
+    font-size: 30px
+}
+
+.roles-selection-section {
+    font-family: inherit;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.roles-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.role-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 50px 0 50px
+}
+
+/* État initial des cartes pour l'apparition séquentielle */
+.role-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    /* Pour garder la fluidité du hover existant */
+}
+
+.role-image-wrapper {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.role-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Halo lumineux en dessous de l'image (effet lueur au sol) */
+.role-image-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    width: 50px;
+    height: 15px;
+    background: rgba(143, 162, 255, 0);
+    border-radius: 50%;
+    filter: blur(8px);
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+/* Quand la carte s'illumine à l'apparition */
+.role-card.highlight .role-image-wrapper::after {
+    background: rgba(143, 162, 255, 0.8);
+    transform: translateX(-50%) scale(1.2);
+}
+
+.role-card.highlight .role-image-wrapper img {
+    filter: drop-shadow(0 8px 12px rgba(143, 162, 255, 0.5));
+    transform: translateY(-5px);
+}
+
+.help-icon {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #222947;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: url('../img/souris/main.png'), pointer;
+}
+
+.role-image-wrapper:hover .help-icon {
+    opacity: 1;
+}
+
+.role-card h3 {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.role-info-display {
+    margin-top: 30px;
+    padding: 15px 20px;
+    background: #222947;
+    border-left: 4px solid #8FA2FF;
+    border-radius: 50px;
+    color: aliceblue;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Effet Karaoke Apple Music Fluide */
+.karaoke-text {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 500;
+    color: #222947;
+    /* Couleur de base discrète (plus sombre/grisée) */
+}
+
+.karaoke-text .char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(8px) scale(0.95);
+    transition: none;
+    /* Géré par GSAP pour une fluidité maximale à 60/120fps */
+}
+
+/* Style pour la section du bas */
+.famille-section {
+    opacity: 1;
+}
+
+/* Le point d'interrogation ciblé pour l'agrandissement de 2px sur 1s */
+.animate-q {
+    display: inline-block;
+    transition: font-size 1s ease, transform 1s ease;
+}
+
+/* Style pour le point d'interrogation de la phrase statique */
+.famille-q {
+    display: inline-block;
+    font-size: 24pt;
+    /* Taille de base */
+    transition: font-size 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Animation rapide et rebondissante */
+}
+
+/* Effet Karaoke pour la phrase du dessous (masqué au départ) */
+.karaoke-text-famille .char-f {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(8px) scale(0.95);
+}
+
+/* Section des articles */
+.articles-section {
+    max-width: 1000px;
+    margin: 80px auto 50px auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.articles-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.articles-header h2 {
+    font-size: 2rem;
+    color: #222947;
+    margin-bottom: 20px;
+}
+
+.category-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 0 24px;
+}
+
+.category-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(143, 162, 255, 0.12);
+    border: 1px solid rgba(81, 90, 128, 0.15);
+    color: #222947;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.category-chip:hover {
+    background: #222947;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Barre de recherche animée */
+.search-bar-wrapper {
+    width: 100%;
+    max-width: 500px;
+}
+
+#article-search {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid #d1d5db;
+    border-radius: 50px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #f9fafb;
+    color: #222947;
+}
+
+#article-search:focus {
+    border-color: #515a80;
+    box-shadow: 0 0 15px rgba(81, 90, 128, 0.2);
+    background-color: #ffffff;
+}
+
+/* Grille des cartes d'articles */
+.articles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.article-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    opacity: 0;
+    /* Masqué au départ pour l'animation GSAP */
+    transform: translateY(30px);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.article-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.article-icon-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.article-card h3 {
+    font-size: 1.15rem;
+    color: #222947;
+    margin-bottom: 10px;
+}
+
+.article-card p {
+    font-size: 0.9rem;
+    color: #4b5563;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.article-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #222947;
+    color: #ffffff;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.article-btn:hover {
+    background-color: #515a80;
+    transform: scale(1.05);
+}
+
+/* Verrouillage du scroll pendant l'intro */
+body.locked-scroll {
+    overflow: hidden;
+    height: 100vh;
+}

@@ -1,0 +1,134 @@
+.article-page-container {
+    max-width: 800px;
+    margin: 120px 40px 80px 40px;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.article-page-container h1 {
+    font-size: 2.5rem;
+    color: #222947;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #8FA2FF;
+    padding-bottom: 10px;
+}
+
+.article-page-container h2 {
+    font-size: 1.5rem;
+    color: #515a80;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.article-page-container h3 {
+    font-size: 1.25rem;
+    color: #515a80;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 400;
+
+}
+
+.article-page-container p {
+    font-size: 1.05rem;
+    color: #4b5563;
+    margin-bottom: 20px;
+}
+
+.article-page-container ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.article-page-container li {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 8px;
+}
+
+.article-page-container a:hover {
+    color: #222947;
+}
+
+/* Boutons de navigation en haut de l'article */
+.article-nav-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+    transition: all 0.2s ease;
+}
+
+.article-btn-nav {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #222947;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.article-nav-buttons a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.4s ease;
+
+
+}
+
+.article-btn-nav:hover {
+    background-color: #f3f4f6;
+    color: #222947;
+    border: 3px solid #222947;
+
+    transform: translateY(-2px);
+}
+
+a code {
+    background: #cadcff;
+    padding: 2px 6px;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    color: #4b5563;
+    text-decoration: none;
+
+}
+
+code {
+    background: #cadcff;
+    padding: 2px 6px;
+    border-radius: 50px;
+}
+
+.page {
+    font-size: 1.05rem;
+    color: #313740;
+    text-decoration: underline;
+
+}
+
+.article {
+    background: #cadcff;
+    padding: 2px 6px;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    color: #4b5563;
+    text-decoration: none;
+
+
+}
+
+.mot {
+    background: #ffcaca;
+    padding: 2px 6px;
+    border-radius: 50px;
+    color: #4b5563;
+    text-decoration: none;
+}

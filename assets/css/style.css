@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background: #EEF1FE;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #222947;
+}
+
+body,
+html {
+    /* Le pointeur normal partout par défaut */
+    cursor: url('../img/souris/pointeur.png'), auto;
+}
+
+/* La main quand on passe sur un lien, un bouton ou un élément cliquable */
+a,
+button,
+input[type="submit"],
+input[type="button"],
+.clickable {
+    cursor: url('../img/souris/main.png'), pointer;
+}
